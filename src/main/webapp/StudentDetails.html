@@ -1,0 +1,35 @@
+<!-- StudentDetails.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Include Menu -->
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Register.html">Register</a>
+        <a href="StudentDetails.html">Student Details</a>
+    </nav>
+
+    <section id="student-details">
+        <h2>Student Details</h2>
+        <form action="View" method="get">
+            
+            <label for="rollnumber">Roll Number:</label>
+            <input type="text" id="rollnumber" name="rollnumber" required>
+
+            
+            <div class="button-container">
+                <input type="submit" value="View Details">
+                <a href="Home.html" class="back-btn">Back</a>
+            </div>
+        </form>
+    </section>
+
+</body>
+</html>

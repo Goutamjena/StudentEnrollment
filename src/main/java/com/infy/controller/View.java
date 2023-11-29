@@ -30,11 +30,14 @@ public class View extends HttpServlet {
         //System.out.println("Collected Rollno from view Page:"+rollno);
         //Need to pass it to JSP for better view
         s=sd.viewDetails(rollno);
-        out.print("<p>Name</p>"+s.getName());
+        /*out.print("<p>Name</p>"+s.getName());
         out.print("<p>Roll No</p>"+s.getRollno());
         out.print("<p>Address</p>"+s.getAddress());
         //System.out.println("view servlet Name:"+s.getName() +"RollNo:"+s.getRollno() );
-    	request.getRequestDispatcher("StudentDetails.html").include(request, response); 
+    	request.getRequestDispatcher("StudentDetails.html").include(request, response); */
+        
+        request.setAttribute("Std", s);
+        request.getRequestDispatcher("StudentDetails.jsp").include(request, response);
 		
 	}
 

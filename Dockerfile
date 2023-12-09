@@ -33,4 +33,4 @@ COPY ./target/StudentEnrollment.war $CATALINA_HOME/webapps/
 EXPOSE 8080
 
 # Start Tomcat
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+CMD ["/opt/tomcat/bin/catalina.sh", "run" "&"]

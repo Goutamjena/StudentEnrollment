@@ -27,7 +27,7 @@ RUN wget -q http://mirror.linux-ia64.org/apache/tomcat/tomcat-8/v8.5.72/bin/apac
 RUN rm -rf $CATALINA_HOME/webapps/*
 
 # Copy your web application WAR file to the Tomcat webapps directory
-COPY ./StudentEnrollment/target/webapp.war $CATALINA_HOME/webapps/
+COPY ./StudentEnrollment/target/StudentEnrollment.war $CATALINA_HOME/webapps/
 
 # Expose the Tomcat port
 EXPOSE 8080

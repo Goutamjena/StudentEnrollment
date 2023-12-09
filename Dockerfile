@@ -10,15 +10,15 @@ ENV CATALINA_HOME /opt/tomcat
 RUN mkdir -p ~/MyApp
 
 # Set it as the working directory
-WORKDIR ~/MyApp
+WORKDIR /root/MyApp
 
 # Update and install necessary packages
 RUN apt-get update && \
     apt-get install -y openjdk-8-jdk wget && \
     rm -rf /var/lib/apt/lists/*
 
-# Download and install Apache Tomcat
-RUN wget -q http://mirror.linux-ia64.org/apache/tomcat/tomcat-8/v8.5.72/bin/apache-tomcat-8.5.72.tar.gz -O /tmp/tomcat.tar.gz && \
+# Download and install Apache Tomcat 9 from the provided URL
+RUN wget -q https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.83/bin/apache-tomcat-9.0.83.tar.gz -O /tmp/tomcat.tar.gz && \
     mkdir $CATALINA_HOME && \
     tar xzvf /tmp/tomcat.tar.gz -C $CATALINA_HOME --strip-components=1 && \
     rm /tmp/tomcat.tar.gz
@@ -27,10 +27,10 @@ RUN wget -q http://mirror.linux-ia64.org/apache/tomcat/tomcat-8/v8.5.72/bin/apac
 RUN rm -rf $CATALINA_HOME/webapps/*
 
 # Copy your web application WAR file to the Tomcat webapps directory
-COPY ./StudentEnrollment/target/StudentEnrollment.war $CATALINA_HOME/webapps/
+COPY ./target/StudentEnrollment.war $CATALINA_HOME/webapps/
 
 # Expose the Tomcat port
 EXPOSE 8080
 
 # Start Tomcat
-CMD ["$CATALINA_HOME/bin/catalina.sh", "run"]
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]

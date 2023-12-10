@@ -13,13 +13,20 @@ public class studentdao extends StudentAction{
 	
 	public static Connection getConnection() {
 		Connection con=null;
-		String url="jdbc:oracle:thin:@localhost:1521:xe";
+		/*String url="jdbc:oracle:thin:@localhost:1521:xe";
 		String username="admin";
 		String password="password";
 		
+		//This section for oracle database
+		*/
+		String url="jdbc:mysql://localhost:3306/mydatabase";
+		String username="root";
+		String password="Password@2023";
+		
 		try
 		{
-			Class.forName("oracle.jdbc.driver.OracleDriver");  
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName("com.mysql.jdbc.Driver");  
 			 con=DriverManager.getConnection(url,username,password);
 		}
 		catch (Exception e) {

@@ -63,25 +63,13 @@ If using Minikube on Windows, obtain the URL to access the application:
 `minikube service servlet-service --url`
 For example, the URL is `http://127.0.0.1:61192/StudentEnrollment/`
 
-Feel free to update and customize this README file based on your specific project details and preferences.
 
-
-
-
-
-
-
-
-
-
-
-Reference to login to database conatiner for and create the table std for the first time which contains the data
+## 10.Reference to login to database conatiner for and create the table std for the first time which contains the data
 
 The following command will change in case based upton the OS, for if you have installed minicube on windows use the following command to login to the cluster
 
 
-
-"winpty kubectl exec -it mysql-deployment-65f57894b7-mgwx6 -- sh" 
+``` "winpty kubectl exec -it mysql-deployment-65f57894b7-mgwx6 -- sh" 
 $ kubectl exec -it mysql-deployment-65f57894b7-mgwx6 -- bash
 Unable to use a TTY - input is not a terminal or the right kind of file
 
@@ -144,4 +132,4 @@ mysql> select * from std;
 +---------+--------+----------+
 2 rows in set (0.00 sec)
 
-mysql> exit
+mysql> exit ```

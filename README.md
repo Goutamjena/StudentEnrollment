@@ -24,10 +24,10 @@ Go top the project folder "StudentEnrollment" and run the following command
 Note: Bsed upon your docker repo change the path
 
 7.The command to Deploye the application to Kubernetes cluster
-kubectl apply -f studenetapp-deployement.yml
-kubectl apply -f studentapp-service.yml
-kubectl apply -f mysql-deployment.yml
-kubectl apply -f mysql-service.yml
+# kubectl apply -f studenetapp-deployement.yml
+# kubectl apply -f studentapp-service.yml
+# kubectl apply -f mysql-deployment.yml
+# kubectl apply -f mysql-service.yml
 
 8.Login to the database cluster and create the std table and insert some dummy data
 Please refer the instruction given in reference

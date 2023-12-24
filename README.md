@@ -31,33 +31,33 @@ Set the PATH environment variable based on your operating system.
 ## 3. Clone the Repository
 
 
-git clone https://github.com/Goutamjena/StudentEnrollment.git
-
+`git clone https://github.com/Goutamjena/StudentEnrollment.git
+`
 ## 4. Build Package
 Navigate to the project folder "StudentEnrollment" and run:
 
-mvn package
+`mvn package`
 
 ## 5. Build Docker Image
-docker build -t studentapp .
+`docker build -t studentapp .`
 ## 6. Push to Docker Hub
-docker tag studentapp goutam14339919/student_enrollment:5.0
-docker push goutam14339919/student_enrollment:5.0
+`docker tag studentapp goutam14339919/student_enrollment:5.0`
+`docker push goutam14339919/student_enrollment:5.0`
 Note: Update the path based on your Docker repository.
 
 ## 7. Deploy Application to Kubernetes Cluster
-kubectl apply -f studentapp-deployment.yml
-kubectl apply -f studentapp-service.yml
-kubectl apply -f mysql-deployment.yml
-kubectl apply -f mysql-service.yml
+`kubectl apply -f studentapp-deployment.yml`
+`kubectl apply -f studentapp-service.yml`
+`kubectl apply -f mysql-deployment.yml`
+`kubectl apply -f mysql-service.yml`
 ## 8. Database Setup
 Login to the database cluster and create the 'std' table, and insert some dummy data. Refer to the instructions provided in the references.
 
 ## 9. Access the Application (Minikube on Windows)
 If using Minikube on Windows, obtain the URL to access the application:
 
-minikube service servlet-service --url
-For example, the URL is http://127.0.0.1:61192/StudentEnrollment/
+`minikube service servlet-service --url`
+For example, the URL is `http://127.0.0.1:61192/StudentEnrollment/`
 
 Feel free to update and customize this README file based on your specific project details and preferences.
 

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servlet-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servlet-app
+  template:
+    metadata:
+      labels:
+        app: servlet-app
+    spec:
+      containers:
+      - name: servlet-container
+        image: goutam14339919/student_enrollment:4.0
+        ports:
+        - containerPort: 8080

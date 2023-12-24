@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: servlet-container
-        image: goutam14339919/student_enrollment:4.0
+        image: goutam14339919/student_enrollment:5.0
         ports:
         - containerPort: 8080

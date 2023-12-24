@@ -1,42 +1,69 @@
-1. Setup the Kubernetes cluseter
--Install Docker
--install kubectl
--install Minikube /setup the Kubenet cluster via kubeadm/EKS
+Student Enrollment Application Deployment Guide
+1. Setup Kubernetes Cluster
+Ensure that you have a Kubernetes cluster ready. You can choose one of the following methods:
 
-2.Setup the Environment for Building the war file and docker image
--install jdk
--install maven
--Install Git
+Minikube:
 
-Set the PATH in env variable based upon OS
-3.Clone the repository
-# git clone https://github.com/Goutamjena/StudentEnrollment.git
+Install Docker
+Install kubectl
+Install Minikube
+Start Minikube: minikube start
+Kubeadm:
 
-4.Build war file
-Go top the project folder "StudentEnrollment" and run the following command
-# mvn package
+Install Docker
+Install kubectl
+Setup Kubernetes using kubeadm
+EKS (Amazon Elastic Kubernetes Service):
 
-5.Build the docker image
-# docker build -t studentapp .
-6.Push to docke hub
-# docker tag  studentapp  goutam14339919/student_enrollment:5.0
-# docker push  goutam14339919/student_enrollment:5.0
-Note: Bsed upon your docker repo change the path
+Follow the AWS documentation for setting up EKS
+2. Setup Environment for Building War File and Docker Image
+Ensure your development environment is set up with the necessary tools:
 
-7.The command to Deploye the application to Kubernetes cluster
-# kubectl apply -f studenetapp-deployement.yml
-# kubectl apply -f studentapp-service.yml
-# kubectl apply -f mysql-deployment.yml
-# kubectl apply -f mysql-service.yml
+Install JDK
+Install Maven
+Install Git
+Set the PATH environment variable based on your operating system.
 
-8.Login to the database cluster and create the std table and insert some dummy data
-Please refer the instruction given in reference
+3. Clone the Repository
+bash
+Copy code
+git clone https://github.com/Goutamjena/StudentEnrollment.git
+4. Build War File
+Navigate to the project folder "StudentEnrollment" and run:
 
-9.If you have used minikube in Windows deployement get the url to access the application
-Run the floowing copmmand to get the url
-# minikube service servlet-service --url
-For eg- the url is http://127.0.0.1:61192/StudentEnrollment/
+bash
+Copy code
+mvn package
+5. Build Docker Image
+bash
+Copy code
+docker build -t studentapp .
+6. Push to Docker Hub
+bash
+Copy code
+docker tag studentapp goutam14339919/student_enrollment:5.0
+docker push goutam14339919/student_enrollment:5.0
+Note: Update the path based on your Docker repository.
 
+7. Deploy Application to Kubernetes Cluster
+bash
+Copy code
+kubectl apply -f studentapp-deployment.yml
+kubectl apply -f studentapp-service.yml
+kubectl apply -f mysql-deployment.yml
+kubectl apply -f mysql-service.yml
+8. Database Setup
+Login to the database cluster and create the 'std' table, and insert some dummy data. Refer to the instructions provided in the references.
+
+9. Access the Application (Minikube on Windows)
+If using Minikube on Windows, obtain the URL to access the application:
+
+bash
+Copy code
+minikube service servlet-service --url
+For example, the URL is http://127.0.0.1:61192/StudentEnrollment/
+
+Feel free to update and customize this README file based on your specific project details and preferences.
 
 
 

@@ -36,23 +36,16 @@ git clone https://github.com/Goutamjena/StudentEnrollment.git
 4. Build War File
 Navigate to the project folder "StudentEnrollment" and run:
 
-bash
-Copy code
 mvn package
+
 5. Build Docker Image
-bash
-Copy code
 docker build -t studentapp .
 6. Push to Docker Hub
-bash
-Copy code
 docker tag studentapp goutam14339919/student_enrollment:5.0
 docker push goutam14339919/student_enrollment:5.0
 Note: Update the path based on your Docker repository.
 
 7. Deploy Application to Kubernetes Cluster
-bash
-Copy code
 kubectl apply -f studentapp-deployment.yml
 kubectl apply -f studentapp-service.yml
 kubectl apply -f mysql-deployment.yml
@@ -63,8 +56,6 @@ Login to the database cluster and create the 'std' table, and insert some dummy 
 9. Access the Application (Minikube on Windows)
 If using Minikube on Windows, obtain the URL to access the application:
 
-bash
-Copy code
 minikube service servlet-service --url
 For example, the URL is http://127.0.0.1:61192/StudentEnrollment/
 

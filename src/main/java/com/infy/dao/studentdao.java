@@ -18,6 +18,7 @@ public class studentdao extends StudentAction{
 		String password="password";
 		
 		//This section for oracle database
+                  Comment the below url based upon the local or container deployement
 		*/
 		//String url="jdbc:mysql://localhost:3306/mydatabase";
 		String url = "jdbc:mysql://mysql-service:3306/mydatabase";

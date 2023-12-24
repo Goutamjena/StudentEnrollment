@@ -41,15 +41,19 @@ Navigate to the project folder "StudentEnrollment" and run:
 ## 5. Build Docker Image
 `docker build -t studentapp .`
 ## 6. Push to Docker Hub
+```
 `docker tag studentapp goutam14339919/student_enrollment:5.0`
 `docker push goutam14339919/student_enrollment:5.0`
+```
 Note: Update the path based on your Docker repository.
 
 ## 7. Deploy Application to Kubernetes Cluster
+```
 `kubectl apply -f studentapp-deployment.yml`
 `kubectl apply -f studentapp-service.yml`
 `kubectl apply -f mysql-deployment.yml`
 `kubectl apply -f mysql-service.yml`
+```
 ## 8. Database Setup
 Login to the database cluster and create the 'std' table, and insert some dummy data. Refer to the instructions provided in the references.
 

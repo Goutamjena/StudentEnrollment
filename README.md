@@ -3,44 +3,38 @@
 -install kubectl
 -install Minikube /setup the Kubenet cluster via kubeadm/EKS
 
-
-3.Setup the Environment for Building the war file and docker image
+2.Setup the Environment for Building the war file and docker image
 -install jdk
 -install maven
 -Install Git
 
 Set the PATH in env variable based upon OS
+3.Clone the repository
+# git clone https://github.com/Goutamjena/StudentEnrollment.git
 
-2.Clone the repository
-  git clone https://github.com/Goutamjena/StudentEnrollment.git
+4.Build war file
+Go top the project folder "StudentEnrollment" and run the following command
+# mvn package
 
-3.Build war file
- Go top the project folder "StudentEnrollment" and run the following command
- # mvn package
-
-4.Build the docker image
-   # docker build -t studentapp .
-5.Push to docke hub
-  # docker tag  studentapp  goutam14339919/student_enrollment:5.0
-  # docker push  goutam14339919/student_enrollment:5.0
+5.Build the docker image
+# docker build -t studentapp .
+6.Push to docke hub
+# docker tag  studentapp  goutam14339919/student_enrollment:5.0
+# docker push  goutam14339919/student_enrollment:5.0
 Note: Bsed upon your docker repo change the path
 
+7.The command to Deploye the application to Kubernetes cluster
+kubectl apply -f studenetapp-deployement.yml
+kubectl apply -f studentapp-service.yml
+kubectl apply -f mysql-deployment.yml
+kubectl apply -f mysql-service.yml
 
-6.The command to Deploye the application to Kubernetes cluster
-  kubectl apply -f studenetapp-deployement.yml
-  kubectl apply -f studentapp-service.yml
-  kubectl apply -f mysql-deployment.yml
-  kubectl apply -f mysql-service.yml
+8.Login to the database cluster and create the std table and insert some dummy data
+Please refer the instruction given in reference
 
-6. Login to the database cluster and create the std table and insert some dummy data
-   Please refer the instruction given in reference
-
-7.If you have used minikube in Windows deployement get the url to access the application
-
+9.If you have used minikube in Windows deployement get the url to access the application
 Run the floowing copmmand to get the url
-
 # minikube service servlet-service --url
-
 For eg- the url is http://127.0.0.1:61192/StudentEnrollment/
 
 

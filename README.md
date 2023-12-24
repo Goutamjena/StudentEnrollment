@@ -1,33 +1,38 @@
-Student Enrollment Application Deployment Guide
-###1. Setup Kubernetes Cluster
+# Student Enrollment Application Deployment Guide
+
+## 1. Setup Kubernetes Cluster
+
 Ensure that you have a Kubernetes cluster ready. You can choose one of the following methods:
 
-#Minikube:
+- **Minikube:**
+  - Install Docker
+  - Install kubectl
+  - Install Minikube
+  - Start Minikube: `minikube start`
 
-##Install Docker
-##Install kubectl
-##Install Minikube
-##Start Minikube: minikube start
-##Kubeadm:
+- **Kubeadm:**
+  - Install Docker
+  - Install kubectl
+  - Setup Kubernetes using kubeadm
 
-Install Docker
-Install kubectl
-Setup Kubernetes using kubeadm
-EKS (Amazon Elastic Kubernetes Service):
+- **EKS (Amazon Elastic Kubernetes Service):**
+  - Follow the AWS documentation for setting up EKS
 
-Follow the AWS documentation for setting up EKS
-2. Setup Environment for Building War File and Docker Image
+## 2. Setup Environment for Building War File and Docker Image
+
 Ensure your development environment is set up with the necessary tools:
 
-Install JDK
-Install Maven
-Install Git
+- Install JDK
+- Install Maven
+- Install Git
+
 Set the PATH environment variable based on your operating system.
 
-3. Clone the Repository
-bash
-Copy code
+## 3. Clone the Repository
+
+```bash
 git clone https://github.com/Goutamjena/StudentEnrollment.git
+
 4. Build War File
 Navigate to the project folder "StudentEnrollment" and run:
 

@@ -1,14 +1,14 @@
 Student Enrollment Application Deployment Guide
-##1. Setup Kubernetes Cluster
+###1. Setup Kubernetes Cluster
 Ensure that you have a Kubernetes cluster ready. You can choose one of the following methods:
 
-Minikube:
+#Minikube:
 
-Install Docker
-Install kubectl
-Install Minikube
-Start Minikube: minikube start
-Kubeadm:
+##Install Docker
+##Install kubectl
+##Install Minikube
+##Start Minikube: minikube start
+##Kubeadm:
 
 Install Docker
 Install kubectl

@@ -51,6 +51,8 @@ Note: Update the path based on your Docker repository.
 ```
 kubectl apply -f studentapp-deployment.yml
 kubectl apply -f studentapp-service.yml
+kubectl apply -f pv.yml
+kubectl apply -f pvc.yml
 kubectl apply -f mysql-deployment.yml
 kubectl apply -f mysql-service.yml
 ```

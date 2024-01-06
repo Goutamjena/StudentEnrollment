@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.servlet.name}}
+spec:
+  replicas: {{.Values.servlet.replicaCount}}
+  selector:
+    matchLabels:
+      app: servlet-app
+  template:
+    metadata:
+      labels:
+        app: servlet-app
+    spec:
+      containers:
+      - name: servlet-container
+        image: {{.Values.servlet.image}}
+        ports:
+        - containerPort: 8080

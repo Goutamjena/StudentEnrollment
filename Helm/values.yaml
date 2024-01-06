@@ -1,0 +1,18 @@
+servlet:
+  name: servlet-deployment
+  replicaCount: 1
+  image: goutam14339919/student_enrollment:5.0
+
+mysql:
+  replicaCount: 1
+  image: mysql:latest
+  rootPassword: Password@2023
+  database: mydatabase
+service:
+  type: ClusterIP
+  name: mysql-service
+
+nodePortService:
+  enabled: true
+  name: servlet-service
+  nodePort: 8080

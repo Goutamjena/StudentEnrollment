@@ -113,10 +113,10 @@ mysql> create table std(name varchar(20), rollno int(20), addrs varchar(20));
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'std(name varchar(20), rollno int(20),
  addrs varchar(20))' at line 1
 mysql> CREATE TABLE `std` (
-    ->   `name` VARCHAR(20),
-    ->   `rollno` INT(20),
-    ->   `addrs` VARCHAR(20)
-    -> );
+       `name` VARCHAR(20),
+       `rollno` INT(20),
+      `addrs` VARCHAR(20)
+     );
 Query OK, 0 rows affected, 1 warning (0.09 sec)
 
 mysql> insert into std values('Goutam', 101 , 'Banglore');
@@ -135,3 +135,48 @@ mysql> select * from std;
 2 rows in set (0.00 sec)
 
 mysql> exit ```
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+## 1. For testing in Kubernetes Playground
+For testing, you can use the Killercoda Kubernetes Playground.
+
+## Kubernetes Playground
+
+Use the following Killercoda environment:
+
+https://killercoda.com/kubernetes/scenario/kubernetes-dashboard
+
+Start the Kubernetes environment before proceeding.
+
+---
+
+## 1. Clone the Repository
+
+Clone the GitHub repository:
+
+```bash
+git clone https://github.com/Goutamjena/StudentEnrollment
+
+cd StudentEnrollment
+
+3. Install the Application Using Helm
+
+Install the application using Helm: 3. Install the Application Using Helm
+
+Install the application using Helm: helm install syudentapp Helm
+
+port forward to 8080
+
+kubectl port-forward deployment/servlet-deployment 8080:8080 --address 0.0.0.0  
+
+
+
+In port access page update custom port with 8080
+
+
+
+Access App : https://0a5e029aea913563-1-8080.papa.r.killercoda.com/StudentEnrollment/
+
+
+
